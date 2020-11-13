@@ -2,11 +2,11 @@ import React from "react";
 import SearchBar from "./Searchbar";
 
 
-const Nav = () => {
+const Nav = ({search}) => {
     return (
         <Nav defaultActiveKey="/home" as="ul">
             <Nav.Item as="li">
-                <SearchBar />
+                <SearchBar search={search}/>
             </Nav.Item>
         </Nav>
     )
