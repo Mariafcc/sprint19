@@ -4,11 +4,11 @@ import SearchBar from "./Searchbar";
 
 const Nav = ({search}) => {
     return (
-        <Nav defaultActiveKey="/home" as="ul">
-            <Nav.Item as="li">
+        <nav className="navbar navbar-expand navbar-light bg-light">
+            <div className="navbar-collapse row" id="navbarNav">
                 <SearchBar search={search}/>
-            </Nav.Item>
-        </Nav>
+            </div>
+        </nav>
     )
 }
 

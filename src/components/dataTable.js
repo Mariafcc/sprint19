@@ -9,18 +9,7 @@ export default class DataTable extends Component {
         filteredEmployees: [{}],
         order: "descend"
     }
-
-    search = (event) => {
-        const inputValue = event.target.value;
-        const filteredList = this.state.employees.filter(employee => {
-            let values = Object.values(employee).join("").toLowerCase();
-            return values.indexOf(inputValue.toLowerCase()) !== -1;
-        })
-        this.setState({
-            filteredEmployees: filteredList
-        })
-    }
-
+    
     headings = [
         {
             name:"Image",
@@ -43,6 +32,7 @@ export default class DataTable extends Component {
             width: "10%"
         }
     ]
+
     sort = (heading) => {
         if (this.state.order === "descend"){
             this.setState({
@@ -78,6 +68,19 @@ export default class DataTable extends Component {
         const sortedEmployee = this.state.filteredEmployees.sort(compare);
         this.setState({filteredEmployees:sortedEmployee});
     }
+
+
+    search = (event) => {
+        const inputValue = event.target.value;
+        const filteredList = this.state.employees.filter(employee => {
+            let values = Object.values(employee).join("").toLowerCase();
+            return values.indexOf(inputValue.toLowerCase()) !== -1;
+        })
+        this.setState({
+            filteredEmployees: filteredList
+        })
+    }
+
 
 
     componentDidMount(){
