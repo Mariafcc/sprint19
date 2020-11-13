@@ -1,21 +1,28 @@
 import React from "react";
+import TBody from "./TBody";
 
-const Table = () => {
+const Table = ({employees,headings, sort}) => {
     return (
         <div>
-            <table striped bordered hover>
+            <table id="employeeTable" className="table table-hover table-condensed table-striped">
                 <thead>
                     <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>DOB</th>
+                        {headings.map(({name,width})=>{
+                            return (
+                                <th className="col" style={{width}} onClick= {() => {
+                                    sort(name.toLowerCase())
+                                }}>
+                                    {name}
+                                    <span className="point"></span> 
+                                </th>
+                
+
+                            )
+                        })}
                     </tr>
                 </thead>
-                <tbody>
-
-                </tbody>
+                <TBody employees={employees} />
+                    
             </table>
         </div>
     )
