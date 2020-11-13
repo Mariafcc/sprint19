@@ -10,22 +10,23 @@ const Table = ({employees,headings, sort}) => {
                         {headings.map(({name,width})=>{
                             return (
                                 <th className="col" style={{width}} onClick= {() => {
-                                    sort(name.toLowerCase())
+                                    sort(name.toLowerCase());
                                 }}>
                                     {name}
                                     <span className="point"></span> 
                                 </th>
                 
 
-                            )
+                            );
                         })}
                     </tr>
                 </thead>
+
                 <TBody employees={employees} />
                     
             </table>
         </div>
-    )
+    );
 }
 
 export default Table
