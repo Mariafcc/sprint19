@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import API from "../utils/api"
-import SearchBar from "../components/searchbar"
-import Table from "../components/Table"
+import SearchBar from "./Searchbar"
+import Table from "./Table"
 
 class DataTable extends Component {
     state = {
