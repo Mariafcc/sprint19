@@ -85,6 +85,7 @@ export default class DataTable extends Component {
 
     componentDidMount(){
         API.Employee().then(res => {
+            console.log(res);
             this.setState({
                 employees: res.data.results,
                 filteredEmployees: res.data.results
